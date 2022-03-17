@@ -18,23 +18,17 @@ Insert into Products(Title,Description,Category,Price,Image) values('Item 10','I
 
 
 SELECT * FROM Products
+
 SELECT * FROM Cart
 SELECT * FROM Orders
 
 INSERT INTO CART(ProductId,Quantity,UserId,Price)
 SELECT toP 5 ID,1,1,Price FROM Products;	
 
-CREATE procedure GetProducts(@type varchar(100), @ProductName varchar(100))
+CREATE procedure GetAllProducts
 AS
-BEGIN
-	IF @type = 'All'
-	BEGIN
+BEGIN	
 		SELECT * FROM Products;
-	END
-	IF @type != 'All'
-	BEGIN
-		SELECT * FROM Products WHERE Title = @ProductName;
-	END
 END
 
 CREATE procedure UpdateCart(@type varchar(100), @ProductId INT, @Quantity INT)
